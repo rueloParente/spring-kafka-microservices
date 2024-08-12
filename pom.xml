@@ -17,6 +17,6 @@
     </properties>
 
     <modules>
-
+        <module>library-service</module>
     </modules>
 </project>
