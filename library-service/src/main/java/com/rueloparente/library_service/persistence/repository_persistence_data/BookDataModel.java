@@ -32,6 +32,10 @@ public class BookDataModel {
         return bookID;
     }
 
+    public void setBookID(int bookID) {
+        this.bookID = bookID;
+    }
+
     public String getTitle() {
         return title;
     }

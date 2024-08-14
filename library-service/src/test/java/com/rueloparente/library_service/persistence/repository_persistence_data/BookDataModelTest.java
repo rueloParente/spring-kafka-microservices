@@ -276,6 +276,34 @@ class BookDataModelTest {
 
         //Assert
         assertEquals(expected, result);
+    }
+    @Test
+    void shouldSetBookIdWhenSetBookIdIsCalledOnDataModel() {
+        //Arrange
+        BookTitle bookTitle = mock(BookTitle.class);
+        when(bookTitle.getValue()).thenReturn("Book Name");
+        BookDescription bookDescription = mock(BookDescription.class);
+        when(bookDescription.getValue()).thenReturn("Book Description");
+        BookAvailable bookAvailable = mock(BookAvailable.class);
+        when(bookAvailable.getValue()).thenReturn(true);
+        BookID bookID = mock(BookID.class);
+        when(bookID.getValue()).thenReturn(5);
 
+        Book book = mock(Book.class);
+        when(book.getName()).thenReturn(bookTitle);
+        when(book.getDescription()).thenReturn(bookDescription);
+        when(book.isAvailable()).thenReturn(bookAvailable);
+        when(book.getId()).thenReturn(bookID);
+
+        BookDataModel bookDataModel = new BookDataModel(book);
+
+        int expected = 10;
+        //Act
+        bookDataModel.setBookID(expected);
+
+        int result = bookDataModel.getBookID();
+
+        //Assert
+        assertEquals(expected, result);
     }
 }
