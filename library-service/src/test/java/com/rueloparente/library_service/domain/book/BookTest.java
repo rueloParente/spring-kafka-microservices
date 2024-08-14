@@ -1,9 +1,6 @@
 package com.rueloparente.library_service.domain.book;
 
-import com.rueloparente.library_service.domain.value_object.BookAvailable;
-import com.rueloparente.library_service.domain.value_object.BookDescription;
-import com.rueloparente.library_service.domain.value_object.BookID;
-import com.rueloparente.library_service.domain.value_object.BookTitle;
+import com.rueloparente.library_service.domain.value_object.*;
 import org.junit.jupiter.api.Test;
 
 import java.util.Objects;
@@ -14,8 +11,13 @@ class BookTest {
     @Test
     void shouldReturnTrueWhenGivenSameBook() {
         //Arrange
-        Book book1 = new Book(new BookID(1), new BookTitle("Book1"), new BookDescription("Description1"), new BookAvailable(true));
-        Book book2 = new Book(new BookID(1), new BookTitle("Book1"), new BookDescription("Description1"), new BookAvailable(true));
+        FactoryBookVO bookFactoryVO = new FactoryBookVOImp();
+        BookID bookID = bookFactoryVO.createBookID(1);
+        BookTitle bookTitle = bookFactoryVO.createBookTitle("Book1");
+        BookDescription bookDescription = bookFactoryVO.createBookDescription("Description1");
+        BookAvailable bookAvailable = bookFactoryVO.createBookAvailable(true);
+        Book book1 = new Book(bookID, bookTitle, bookDescription, bookAvailable);
+        Book book2 = new Book(bookID, bookTitle, bookDescription, bookAvailable);
 
         //Act
         boolean result = book1.equals(book2);
@@ -27,8 +29,19 @@ class BookTest {
     @Test
     void shouldReturnFalseWhenGivenDifferentBook() {
         //Arrange
-        Book book1 = new Book(new BookID(1), new BookTitle("Book1"), new BookDescription("Description1"), new BookAvailable(true));
-        Book book2 = new Book(new BookID(2), new BookTitle("Book2"), new BookDescription("Description2"), new BookAvailable(false));
+        FactoryBookVO bookFactoryVO = new FactoryBookVOImp();
+
+        BookID bookID = bookFactoryVO.createBookID(1);
+        BookTitle bookTitle = bookFactoryVO.createBookTitle("Book1");
+        BookDescription bookDescription = bookFactoryVO.createBookDescription("Description1");
+        BookAvailable bookAvailable = bookFactoryVO.createBookAvailable(true);
+        Book book1 = new Book(bookID, bookTitle, bookDescription, bookAvailable);
+
+        BookID bookID2 = bookFactoryVO.createBookID(2);
+        BookTitle bookTitle2 = bookFactoryVO.createBookTitle("Book2");
+        BookDescription bookDescription2 = bookFactoryVO.createBookDescription("Description2");
+        BookAvailable bookAvailable2 = bookFactoryVO.createBookAvailable(false);
+        Book book2 = new Book(bookID2, bookTitle2, bookDescription2, bookAvailable2);
 
         //Act
         boolean result = book1.equals(book2);
@@ -40,7 +53,12 @@ class BookTest {
     @Test
     void shouldReturnFalseWhenGivenDifferentObject() {
         //Arrange
-        Book book = new Book(new BookID(1), new BookTitle("Book1"), new BookDescription("Description1"), new BookAvailable(true));
+        FactoryBookVO bookFactoryVO = new FactoryBookVOImp();
+        BookID bookID = bookFactoryVO.createBookID(1);
+        BookTitle bookTitle = bookFactoryVO.createBookTitle("Book1");
+        BookDescription bookDescription = bookFactoryVO.createBookDescription("Description1");
+        BookAvailable bookAvailable = bookFactoryVO.createBookAvailable(true);
+        Book book = new Book(bookID, bookTitle, bookDescription, bookAvailable);
 
         //Act
         boolean result = book.equals(new Object());
@@ -52,10 +70,12 @@ class BookTest {
     @Test
     void shouldReturnBookNameWhenGivenValidValue() {
         //Arrange
-        BookTitle bookTitle = new BookTitle("Book1");
-        BookDescription bookDescription = new BookDescription("Description1");
-        BookAvailable bookAvailable = new BookAvailable(true);
-        Book book = new Book(bookTitle, bookDescription, bookAvailable);
+        FactoryBookVO bookFactoryVO = new FactoryBookVOImp();
+        BookID bookID = bookFactoryVO.createBookID(1);
+        BookTitle bookTitle = bookFactoryVO.createBookTitle("Book1");
+        BookDescription bookDescription = bookFactoryVO.createBookDescription("Description1");
+        BookAvailable bookAvailable = bookFactoryVO.createBookAvailable(true);
+        Book book = new Book(bookID, bookTitle, bookDescription, bookAvailable);
 
         //Act
         BookTitle result = book.getName();
@@ -67,10 +87,12 @@ class BookTest {
     @Test
     void shouldReturnBookDescriptionWhenGivenValidValue() {
         //Arrange
-        BookTitle bookTitle = new BookTitle("Book1");
-        BookDescription bookDescription = new BookDescription("Description1");
-        BookAvailable bookAvailable = new BookAvailable(true);
-        Book book = new Book(bookTitle, bookDescription, bookAvailable);
+        FactoryBookVO bookFactoryVO = new FactoryBookVOImp();
+        BookID bookID = bookFactoryVO.createBookID(1);
+        BookTitle bookTitle = bookFactoryVO.createBookTitle("Book1");
+        BookDescription bookDescription = bookFactoryVO.createBookDescription("Description1");
+        BookAvailable bookAvailable = bookFactoryVO.createBookAvailable(true);
+        Book book = new Book(bookID, bookTitle, bookDescription, bookAvailable);
 
         //Act
         BookDescription result = book.getDescription();
@@ -82,10 +104,12 @@ class BookTest {
     @Test
     void shouldReturnBookAvailableWhenGivenValidValue() {
         //Arrange
-        BookTitle bookTitle = new BookTitle("Book1");
-        BookDescription bookDescription = new BookDescription("Description1");
-        BookAvailable bookAvailable = new BookAvailable(true);
-        Book book = new Book(bookTitle, bookDescription, bookAvailable);
+        FactoryBookVO bookFactoryVO = new FactoryBookVOImp();
+        BookID bookID = bookFactoryVO.createBookID(1);
+        BookTitle bookTitle = bookFactoryVO.createBookTitle("Book1");
+        BookDescription bookDescription = bookFactoryVO.createBookDescription("Description1");
+        BookAvailable bookAvailable = bookFactoryVO.createBookAvailable(true);
+        Book book = new Book(bookID, bookTitle, bookDescription, bookAvailable);
 
         //Act
         BookAvailable result = book.isAvailable();
@@ -97,10 +121,11 @@ class BookTest {
     @Test
     void shouldReturnBookIDWhenGivenValidValue() {
         //Arrange
-        BookID bookID = new BookID(1);
-        BookTitle bookTitle = new BookTitle("Book1");
-        BookDescription bookDescription = new BookDescription("Description1");
-        BookAvailable bookAvailable = new BookAvailable(true);
+        FactoryBookVO bookFactoryVO = new FactoryBookVOImp();
+        BookID bookID = bookFactoryVO.createBookID(1);
+        BookTitle bookTitle = bookFactoryVO.createBookTitle("Book1");
+        BookDescription bookDescription = bookFactoryVO.createBookDescription("Description1");
+        BookAvailable bookAvailable = bookFactoryVO.createBookAvailable(true);
         Book book = new Book(bookID, bookTitle, bookDescription, bookAvailable);
 
         //Act
@@ -113,11 +138,12 @@ class BookTest {
     @Test
     void shouldSetBookIDWhenGivenValidValue() {
         //Arrange
-        BookID bookID = new BookID(1);
-        BookTitle bookTitle = new BookTitle("Book1");
-        BookDescription bookDescription = new BookDescription("Description1");
-        BookAvailable bookAvailable = new BookAvailable(true);
-        Book book = new Book(bookTitle, bookDescription, bookAvailable);
+        FactoryBookVO bookFactoryVO = new FactoryBookVOImp();
+        BookID bookID = bookFactoryVO.createBookID(1);
+        BookTitle bookTitle = bookFactoryVO.createBookTitle("Book1");
+        BookDescription bookDescription = bookFactoryVO.createBookDescription("Description1");
+        BookAvailable bookAvailable = bookFactoryVO.createBookAvailable(true);
+        Book book = new Book(bookID, bookTitle, bookDescription, bookAvailable);
 
         //Act
         BookID result = book.setId(bookID);
@@ -129,10 +155,11 @@ class BookTest {
     @Test
     void shouldSetBookAvailableWhenGivenValidValue() {
         //Arrange
-        BookTitle bookTitle = new BookTitle("Book1");
-        BookDescription bookDescription = new BookDescription("Description1");
-        BookAvailable bookAvailable = new BookAvailable(true);
-        Book book = new Book(bookTitle, bookDescription, new BookAvailable(false));
+        FactoryBookVO bookFactoryVO = new FactoryBookVOImp();
+        BookTitle bookTitle = bookFactoryVO.createBookTitle("Book1");
+        BookDescription bookDescription = bookFactoryVO.createBookDescription("Description1");
+        BookAvailable bookAvailable = bookFactoryVO.createBookAvailable(true);
+        Book book = new Book(bookTitle, bookDescription, bookAvailable);
 
         //Act
         BookAvailable result = book.setAvailable(bookAvailable);
@@ -144,10 +171,11 @@ class BookTest {
     @Test
     void shouldReturnHashCodeWhenGivenValidValue() {
         //Arrange
-        BookID bookID = new BookID(1);
-        BookTitle bookTitle = new BookTitle("Book1");
-        BookDescription bookDescription = new BookDescription("Description1");
-        BookAvailable bookAvailable = new BookAvailable(true);
+        FactoryBookVO bookFactoryVO = new FactoryBookVOImp();
+        BookID bookID = bookFactoryVO.createBookID(1);
+        BookTitle bookTitle = bookFactoryVO.createBookTitle("Book1");
+        BookDescription bookDescription = bookFactoryVO.createBookDescription("Description1");
+        BookAvailable bookAvailable = bookFactoryVO.createBookAvailable(true);
         Book book = new Book(bookID, bookTitle, bookDescription, bookAvailable);
 
         int expected = Objects.hash(bookID, bookTitle, bookDescription, bookAvailable);
@@ -161,10 +189,11 @@ class BookTest {
     @Test
     void shouldReturnStringWhenGivenValidValue() {
         //Arrange
-        BookID bookID = new BookID(1);
-        BookTitle bookTitle = new BookTitle("Book1");
-        BookDescription bookDescription = new BookDescription("Description1");
-        BookAvailable bookAvailable = new BookAvailable(true);
+        FactoryBookVO bookFactoryVO = new FactoryBookVOImp();
+        BookID bookID = bookFactoryVO.createBookID(1);
+        BookTitle bookTitle = bookFactoryVO.createBookTitle("Book1");
+        BookDescription bookDescription = bookFactoryVO.createBookDescription("Description1");
+        BookAvailable bookAvailable = bookFactoryVO.createBookAvailable(true);
         Book book = new Book(bookID, bookTitle, bookDescription, bookAvailable);
 
         String expected = "Book{" +
@@ -183,7 +212,12 @@ class BookTest {
     @Test
     void shouldReturnFalseWhenGivenNull() {
         //Arrange
-        Book book = new Book(new BookID(1), new BookTitle("Book1"), new BookDescription("Description1"), new BookAvailable(true));
+        FactoryBookVO bookFactoryVO = new FactoryBookVOImp();
+        BookID bookID = bookFactoryVO.createBookID(1);
+        BookTitle bookTitle = bookFactoryVO.createBookTitle("Book1");
+        BookDescription bookDescription = bookFactoryVO.createBookDescription("Description1");
+        BookAvailable bookAvailable = bookFactoryVO.createBookAvailable(true);
+        Book book = new Book(bookID, bookTitle, bookDescription, bookAvailable);
 
         //Act
         boolean result = book.equals(null);
@@ -195,7 +229,12 @@ class BookTest {
     @Test
     void shouldReturnTrueWhenComparingSameObject() {
         //Arrange
-        Book book = new Book(new BookID(1), new BookTitle("Book1"), new BookDescription("Description1"), new BookAvailable(true));
+        FactoryBookVO bookFactoryVO = new FactoryBookVOImp();
+        BookID bookID = bookFactoryVO.createBookID(1);
+        BookTitle bookTitle = bookFactoryVO.createBookTitle("Book1");
+        BookDescription bookDescription = bookFactoryVO.createBookDescription("Description1");
+        BookAvailable bookAvailable = bookFactoryVO.createBookAvailable(true);
+        Book book = new Book(bookID, bookTitle, bookDescription, bookAvailable);
 
         //Act
         boolean result = book.equals(book);
@@ -207,9 +246,15 @@ class BookTest {
     @Test
     void shouldReturnFalseWhenOneAttributeIsDifferent() {
         //Arrange
-        Book book1 = new Book(new BookID(1), new BookTitle("Book1"), new BookDescription("Description1"), new BookAvailable(true));
-        Book book2 = new Book(new BookID(1), new BookTitle("Book2"), new BookDescription("Description1"), new BookAvailable(true));
+        FactoryBookVO bookFactoryVO = new FactoryBookVOImp();
+        BookID bookID = bookFactoryVO.createBookID(1);
+        BookTitle bookTitle = bookFactoryVO.createBookTitle("Book1");
+        BookTitle bookTitle2 = bookFactoryVO.createBookTitle("Book2");
+        BookDescription bookDescription = bookFactoryVO.createBookDescription("Description1");
+        BookAvailable bookAvailable = bookFactoryVO.createBookAvailable(true);
+        Book book1 = new Book(bookID, bookTitle, bookDescription, bookAvailable);
 
+        Book book2 = new Book(bookID, bookTitle2, bookDescription, bookAvailable);
         //Act
         boolean result = book1.equals(book2);
 
@@ -219,8 +264,14 @@ class BookTest {
     @Test
     void shouldReturnFalseWhenOnlyDifferentIsDescription() {
         //Arrange
-        Book book1 = new Book(new BookID(1), new BookTitle("Book1"), new BookDescription("Description1"), new BookAvailable(true));
-        Book book2 = new Book(new BookID(1), new BookTitle("Book1"), new BookDescription("Description2"), new BookAvailable(true));
+        FactoryBookVO bookFactoryVO = new FactoryBookVOImp();
+        BookID bookID = bookFactoryVO.createBookID(1);
+        BookTitle bookTitle = bookFactoryVO.createBookTitle("Book1");
+        BookDescription bookDescription = bookFactoryVO.createBookDescription("Description1");
+        BookDescription bookDescription2 = bookFactoryVO.createBookDescription("Description2");
+        BookAvailable bookAvailable = bookFactoryVO.createBookAvailable(true);
+        Book book1 = new Book(bookID, bookTitle, bookDescription, bookAvailable);
+        Book book2 = new Book(bookID, bookTitle, bookDescription2, bookAvailable);
 
         //Act
         boolean result = book1.equals(book2);

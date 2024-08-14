@@ -1,6 +1,5 @@
-package com.rueloparente.library_service.domain.book;
+package com.rueloparente.library_service.domain.value_object;
 
-import com.rueloparente.library_service.domain.value_object.BookAvailable;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.*;

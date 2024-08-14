@@ -1,6 +1,5 @@
-package com.rueloparente.library_service.domain.book;
+package com.rueloparente.library_service.domain.value_object;
 
-import com.rueloparente.library_service.domain.value_object.BookID;
 import org.junit.jupiter.api.Test;
 import java.util.Objects;
 

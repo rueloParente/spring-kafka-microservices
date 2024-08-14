@@ -6,7 +6,7 @@ import java.util.Objects;
 public class BookID implements DomainID {
     private final int value;
 
-    public BookID(int value) {
+    protected BookID(int value) {
        this.value = value;
     }
 

@@ -1,6 +1,5 @@
-package com.rueloparente.library_service.domain.book;
+package com.rueloparente.library_service.domain.value_object;
 
-import com.rueloparente.library_service.domain.value_object.BookDescription;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.NullSource;

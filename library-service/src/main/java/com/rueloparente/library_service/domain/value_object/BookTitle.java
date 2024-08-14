@@ -3,7 +3,7 @@ package com.rueloparente.library_service.domain.value_object;
 public class BookTitle {
     private final String value;
 
-    public BookTitle(String value) {
+    protected BookTitle(String value) {
         if (value == null || value.isBlank()) {
             throw new IllegalArgumentException("Book name cannot be empty string");
         } else this.value = value;

@@ -7,7 +7,7 @@ import java.util.Objects;
 public class BookAvailable implements ValueObject {
     private final boolean value;
 
-    public BookAvailable(boolean value) {
+    protected BookAvailable(boolean value) {
         this.value = value;
     }
 

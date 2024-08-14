@@ -6,7 +6,7 @@ public class BookDescription {
 
     private final String value;
 
-    public BookDescription(String value) {
+    protected BookDescription(String value) {
         if (value == null || value.isBlank()) {
             throw new IllegalArgumentException("Book description cannot be empty string");
         }else this.value = value;
