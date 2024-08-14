@@ -1,9 +1,9 @@
 package com.rueloparente.library_service.domain.value_object;
 
-public class BookName {
+public class BookTitle {
     private final String value;
 
-    public BookName(String value) {
+    public BookTitle(String value) {
         if (value == null || value.isBlank()) {
             throw new IllegalArgumentException("Book name cannot be empty string");
         } else this.value = value;
@@ -16,8 +16,8 @@ public class BookName {
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
-        if (!(o instanceof BookName bookName)) return false;
-        return value.equals(bookName.value);
+        if (!(o instanceof BookTitle bookTitle)) return false;
+        return value.equals(bookTitle.value);
     }
 
     @Override

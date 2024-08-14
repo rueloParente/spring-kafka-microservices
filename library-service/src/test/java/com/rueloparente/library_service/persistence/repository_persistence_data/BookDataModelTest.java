@@ -4,7 +4,7 @@ import com.rueloparente.library_service.domain.book.Book;
 import com.rueloparente.library_service.domain.value_object.BookAvailable;
 import com.rueloparente.library_service.domain.value_object.BookDescription;
 import com.rueloparente.library_service.domain.value_object.BookID;
-import com.rueloparente.library_service.domain.value_object.BookName;
+import com.rueloparente.library_service.domain.value_object.BookTitle;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
@@ -15,21 +15,21 @@ class BookDataModelTest {
     @Test
     void shouldReturnBookNameWhenGetTitleIsCalledOnDataModel() {
         //Arrange
-        BookName bookName = mock(BookName.class);
-        when(bookName.getValue()).thenReturn("Book Name");
+        BookTitle bookTitle = mock(BookTitle.class);
+        when(bookTitle.getValue()).thenReturn("Book Name");
         BookDescription bookDescription = mock(BookDescription.class);
         when(bookDescription.getValue()).thenReturn("Book Description");
         BookAvailable bookAvailable = mock(BookAvailable.class);
         when(bookAvailable.getValue()).thenReturn(true);
 
         Book book = mock(Book.class);
-        when(book.getName()).thenReturn(bookName);
+        when(book.getName()).thenReturn(bookTitle);
         when(book.getDescription()).thenReturn(bookDescription);
         when(book.isAvailable()).thenReturn(bookAvailable);
 
         BookDataModel bookDataModel = new BookDataModel(book);
 
-        String expected = bookName.getValue();
+        String expected = bookTitle.getValue();
         //Act
 
         String result = bookDataModel.getTitle();
@@ -40,15 +40,15 @@ class BookDataModelTest {
     @Test
     void shouldReturnBookDescriptionWhenGetDescriptionIsCalledOnDataModel() {
         //Arrange
-        BookName bookName = mock(BookName.class);
-        when(bookName.getValue()).thenReturn("Book Name");
+        BookTitle bookTitle = mock(BookTitle.class);
+        when(bookTitle.getValue()).thenReturn("Book Name");
         BookDescription bookDescription = mock(BookDescription.class);
         when(bookDescription.getValue()).thenReturn("Book Description");
         BookAvailable bookAvailable = mock(BookAvailable.class);
         when(bookAvailable.getValue()).thenReturn(true);
 
         Book book = mock(Book.class);
-        when(book.getName()).thenReturn(bookName);
+        when(book.getName()).thenReturn(bookTitle);
         when(book.getDescription()).thenReturn(bookDescription);
         when(book.isAvailable()).thenReturn(bookAvailable);
 
@@ -66,15 +66,15 @@ class BookDataModelTest {
     @Test
     void shouldReturnBookAvailableWhenIsAvailableIsCalledOnDataModel() {
         //Arrange
-        BookName bookName = mock(BookName.class);
-        when(bookName.getValue()).thenReturn("Book Name");
+        BookTitle bookTitle = mock(BookTitle.class);
+        when(bookTitle.getValue()).thenReturn("Book Name");
         BookDescription bookDescription = mock(BookDescription.class);
         when(bookDescription.getValue()).thenReturn("Book Description");
         BookAvailable bookAvailable = mock(BookAvailable.class);
         when(bookAvailable.getValue()).thenReturn(true);
 
         Book book = mock(Book.class);
-        when(book.getName()).thenReturn(bookName);
+        when(book.getName()).thenReturn(bookTitle);
         when(book.getDescription()).thenReturn(bookDescription);
         when(book.isAvailable()).thenReturn(bookAvailable);
 
@@ -92,15 +92,15 @@ class BookDataModelTest {
     @Test
     void shouldReturnBookIDWhenGetBookIDIsCalledOnDataModel() {
         //Arrange
-        BookName bookName = mock(BookName.class);
-        when(bookName.getValue()).thenReturn("Book Name");
+        BookTitle bookTitle = mock(BookTitle.class);
+        when(bookTitle.getValue()).thenReturn("Book Name");
         BookDescription bookDescription = mock(BookDescription.class);
         when(bookDescription.getValue()).thenReturn("Book Description");
         BookAvailable bookAvailable = mock(BookAvailable.class);
         when(bookAvailable.getValue()).thenReturn(true);
 
         Book book = mock(Book.class);
-        when(book.getName()).thenReturn(bookName);
+        when(book.getName()).thenReturn(bookTitle);
         when(book.getDescription()).thenReturn(bookDescription);
         when(book.isAvailable()).thenReturn(bookAvailable);
 
@@ -118,15 +118,15 @@ class BookDataModelTest {
     @Test
     void shouldReturnVersionWhenGetVersionIsCalledOnDataModel() {
         //Arrange
-        BookName bookName = mock(BookName.class);
-        when(bookName.getValue()).thenReturn("Book Name");
+        BookTitle bookTitle = mock(BookTitle.class);
+        when(bookTitle.getValue()).thenReturn("Book Name");
         BookDescription bookDescription = mock(BookDescription.class);
         when(bookDescription.getValue()).thenReturn("Book Description");
         BookAvailable bookAvailable = mock(BookAvailable.class);
         when(bookAvailable.getValue()).thenReturn(true);
 
         Book book = mock(Book.class);
-        when(book.getName()).thenReturn(bookName);
+        when(book.getName()).thenReturn(bookTitle);
         when(book.getDescription()).thenReturn(bookDescription);
         when(book.isAvailable()).thenReturn(bookAvailable);
 
@@ -144,15 +144,15 @@ class BookDataModelTest {
     @Test
     void shouldSetTitleWhenSetTitleIsCalledOnDataModel() {
         //Arrange
-        BookName bookName = mock(BookName.class);
-        when(bookName.getValue()).thenReturn("Book Name");
+        BookTitle bookTitle = mock(BookTitle.class);
+        when(bookTitle.getValue()).thenReturn("Book Name");
         BookDescription bookDescription = mock(BookDescription.class);
         when(bookDescription.getValue()).thenReturn("Book Description");
         BookAvailable bookAvailable = mock(BookAvailable.class);
         when(bookAvailable.getValue()).thenReturn(true);
 
         Book book = mock(Book.class);
-        when(book.getName()).thenReturn(bookName);
+        when(book.getName()).thenReturn(bookTitle);
         when(book.getDescription()).thenReturn(bookDescription);
         when(book.isAvailable()).thenReturn(bookAvailable);
 
@@ -171,15 +171,15 @@ class BookDataModelTest {
     @Test
     void shouldSetDescriptionWhenSetDescriptionIsCalledOnDataModel() {
         //Arrange
-        BookName bookName = mock(BookName.class);
-        when(bookName.getValue()).thenReturn("Book Name");
+        BookTitle bookTitle = mock(BookTitle.class);
+        when(bookTitle.getValue()).thenReturn("Book Name");
         BookDescription bookDescription = mock(BookDescription.class);
         when(bookDescription.getValue()).thenReturn("Book Description");
         BookAvailable bookAvailable = mock(BookAvailable.class);
         when(bookAvailable.getValue()).thenReturn(true);
 
         Book book = mock(Book.class);
-        when(book.getName()).thenReturn(bookName);
+        when(book.getName()).thenReturn(bookTitle);
         when(book.getDescription()).thenReturn(bookDescription);
         when(book.isAvailable()).thenReturn(bookAvailable);
 
@@ -198,15 +198,15 @@ class BookDataModelTest {
     @Test
     void shouldSetAvailableWhenSetAvailableIsCalledOnDataModel() {
         //Arrange
-        BookName bookName = mock(BookName.class);
-        when(bookName.getValue()).thenReturn("Book Name");
+        BookTitle bookTitle = mock(BookTitle.class);
+        when(bookTitle.getValue()).thenReturn("Book Name");
         BookDescription bookDescription = mock(BookDescription.class);
         when(bookDescription.getValue()).thenReturn("Book Description");
         BookAvailable bookAvailable = mock(BookAvailable.class);
         when(bookAvailable.getValue()).thenReturn(true);
 
         Book book = mock(Book.class);
-        when(book.getName()).thenReturn(bookName);
+        when(book.getName()).thenReturn(bookTitle);
         when(book.getDescription()).thenReturn(bookDescription);
         when(book.isAvailable()).thenReturn(bookAvailable);
 
@@ -225,8 +225,8 @@ class BookDataModelTest {
     @Test
     void shouldReturnBookIDWhenBookAlreadyHasAnID() {
         //Arrange
-        BookName bookName = mock(BookName.class);
-        when(bookName.getValue()).thenReturn("Book Name");
+        BookTitle bookTitle = mock(BookTitle.class);
+        when(bookTitle.getValue()).thenReturn("Book Name");
         BookDescription bookDescription = mock(BookDescription.class);
         when(bookDescription.getValue()).thenReturn("Book Description");
         BookAvailable bookAvailable = mock(BookAvailable.class);
@@ -235,7 +235,7 @@ class BookDataModelTest {
         when(bookID.getValue()).thenReturn(5);
 
         Book book = mock(Book.class);
-        when(book.getName()).thenReturn(bookName);
+        when(book.getName()).thenReturn(bookTitle);
         when(book.getDescription()).thenReturn(bookDescription);
         when(book.isAvailable()).thenReturn(bookAvailable);
         when(book.getId()).thenReturn(bookID);
@@ -254,8 +254,8 @@ class BookDataModelTest {
     @Test
     void shouldReturnZeroWhenBookHaveNoIDYet() {
         //Arrange
-        BookName bookName = mock(BookName.class);
-        when(bookName.getValue()).thenReturn("Book Name");
+        BookTitle bookTitle = mock(BookTitle.class);
+        when(bookTitle.getValue()).thenReturn("Book Name");
         BookDescription bookDescription = mock(BookDescription.class);
         when(bookDescription.getValue()).thenReturn("Book Description");
         BookAvailable bookAvailable = mock(BookAvailable.class);
@@ -263,7 +263,7 @@ class BookDataModelTest {
 
 
         Book book = mock(Book.class);
-        when(book.getName()).thenReturn(bookName);
+        when(book.getName()).thenReturn(bookTitle);
         when(book.getDescription()).thenReturn(bookDescription);
         when(book.isAvailable()).thenReturn(bookAvailable);
 

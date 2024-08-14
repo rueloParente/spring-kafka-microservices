@@ -1,6 +1,6 @@
 package com.rueloparente.library_service.domain.book;
 
-import com.rueloparente.library_service.domain.value_object.BookName;
+import com.rueloparente.library_service.domain.value_object.BookTitle;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.NullSource;
@@ -8,16 +8,16 @@ import org.junit.jupiter.params.provider.ValueSource;
 
 import static org.junit.jupiter.api.Assertions.*;
 
-class BookNameTest {
+class BookTitleTest {
 
     @Test
     void shouldReturnBookNameWhenGetValue() {
         // Arrange
         String name = "Book Name";
-        BookName bookName = new BookName(name);
+        BookTitle bookTitle = new BookTitle(name);
 
         // Act
-        String actual = bookName.getValue();
+        String actual = bookTitle.getValue();
 
         // Assert
         assertEquals(name, actual);
@@ -27,11 +27,11 @@ class BookNameTest {
     void shouldReturnTrueWhenEqualsCalledAndSameName() {
         // Arrange
         String name = "Book Name";
-        BookName bookName = new BookName(name);
-        BookName anotherBookName = new BookName(name);
+        BookTitle bookTitle = new BookTitle(name);
+        BookTitle anotherBookTitle = new BookTitle(name);
 
         // Act
-        boolean actual = bookName.equals(anotherBookName);
+        boolean actual = bookTitle.equals(anotherBookTitle);
 
         // Assert
         assertTrue(actual);
@@ -41,11 +41,11 @@ class BookNameTest {
     void shouldReturnFalseWhenEqualsAndDifferentName() {
         // Arrange
         String name = "Book Name";
-        BookName bookName = new BookName(name);
-        BookName anotherBookName = new BookName("Another Book Name");
+        BookTitle bookTitle = new BookTitle(name);
+        BookTitle anotherBookTitle = new BookTitle("Another Book Name");
 
         // Act
-        boolean actual = bookName.equals(anotherBookName);
+        boolean actual = bookTitle.equals(anotherBookTitle);
 
         // Assert
         assertFalse(actual);
@@ -55,10 +55,10 @@ class BookNameTest {
     void shouldReturnFalseWhenDifferentObject() {
         // Arrange
         String name = "Book Name";
-        BookName bookName = new BookName(name);
+        BookTitle bookTitle = new BookTitle(name);
 
         // Act
-        boolean actual = bookName.equals(new Object());
+        boolean actual = bookTitle.equals(new Object());
 
         // Assert
         assertFalse(actual);
@@ -68,10 +68,10 @@ class BookNameTest {
     void shouldReturnHashCodeWhenCalled() {
         // Arrange
         String name = "Book Name";
-        BookName bookName = new BookName(name);
+        BookTitle bookTitle = new BookTitle(name);
 
         // Act
-        int actual = bookName.hashCode();
+        int actual = bookTitle.hashCode();
 
         // Assert
         assertEquals(name.hashCode(), actual);
@@ -82,7 +82,7 @@ class BookNameTest {
     @NullSource
     void shouldThrowExceptionWhenEmptyOrNullName(String name) {
         // Act
-        IllegalArgumentException exception = assertThrows(IllegalArgumentException.class, () -> new BookName(name));
+        IllegalArgumentException exception = assertThrows(IllegalArgumentException.class, () -> new BookTitle(name));
 
         // Assert
         assertEquals("Book name cannot be empty string", exception.getMessage());

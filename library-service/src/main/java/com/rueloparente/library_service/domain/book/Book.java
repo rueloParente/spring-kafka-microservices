@@ -4,23 +4,23 @@ import com.rueloparente.library_service.ddd.AggregateRoot;
 import com.rueloparente.library_service.domain.value_object.BookAvailable;
 import com.rueloparente.library_service.domain.value_object.BookDescription;
 import com.rueloparente.library_service.domain.value_object.BookID;
-import com.rueloparente.library_service.domain.value_object.BookName;
+import com.rueloparente.library_service.domain.value_object.BookTitle;
 
 import java.util.Objects;
 
 public class Book implements AggregateRoot {
 
     private BookID id;
-    private final BookName name;
+    private final BookTitle name;
     private final BookDescription description;
     private BookAvailable available;
 
-    protected Book(BookName name, BookDescription description, BookAvailable available) {
+    protected Book(BookTitle name, BookDescription description, BookAvailable available) {
         this.name = name;
         this.description = description;
         this.available = available;
     }
-    protected Book(BookID id, BookName name, BookDescription description, BookAvailable available) {
+    protected Book(BookID id, BookTitle name, BookDescription description, BookAvailable available) {
         this.id = id;
         this.name = name;
         this.description = description;
@@ -36,7 +36,7 @@ public class Book implements AggregateRoot {
         return id;
     }
 
-    public BookName getName() {
+    public BookTitle getName() {
         return name;
     }
 
