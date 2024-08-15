@@ -12,4 +12,14 @@ public class BookResponseModel {
         this.bookDescription = bookDescription;
         this.bookAvailable = bookAvailable;
     }
+
+    @Override
+    public String toString() {
+        return "BookResponseModel{" +
+                "bookID=" + bookID +
+                ", bookName='" + bookName + '\'' +
+                ", bookDescription='" + bookDescription + '\'' +
+                ", bookAvailable=" + bookAvailable +
+                '}';
+    }
 }
