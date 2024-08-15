@@ -23,7 +23,7 @@ class BookDataModelTest {
         when(bookAvailable.getValue()).thenReturn(true);
 
         Book book = mock(Book.class);
-        when(book.getName()).thenReturn(bookTitle);
+        when(book.getTitle()).thenReturn(bookTitle);
         when(book.getDescription()).thenReturn(bookDescription);
         when(book.isAvailable()).thenReturn(bookAvailable);
 
@@ -48,7 +48,7 @@ class BookDataModelTest {
         when(bookAvailable.getValue()).thenReturn(true);
 
         Book book = mock(Book.class);
-        when(book.getName()).thenReturn(bookTitle);
+        when(book.getTitle()).thenReturn(bookTitle);
         when(book.getDescription()).thenReturn(bookDescription);
         when(book.isAvailable()).thenReturn(bookAvailable);
 
@@ -74,7 +74,7 @@ class BookDataModelTest {
         when(bookAvailable.getValue()).thenReturn(true);
 
         Book book = mock(Book.class);
-        when(book.getName()).thenReturn(bookTitle);
+        when(book.getTitle()).thenReturn(bookTitle);
         when(book.getDescription()).thenReturn(bookDescription);
         when(book.isAvailable()).thenReturn(bookAvailable);
 
@@ -100,7 +100,7 @@ class BookDataModelTest {
         when(bookAvailable.getValue()).thenReturn(true);
 
         Book book = mock(Book.class);
-        when(book.getName()).thenReturn(bookTitle);
+        when(book.getTitle()).thenReturn(bookTitle);
         when(book.getDescription()).thenReturn(bookDescription);
         when(book.isAvailable()).thenReturn(bookAvailable);
 
@@ -126,7 +126,7 @@ class BookDataModelTest {
         when(bookAvailable.getValue()).thenReturn(true);
 
         Book book = mock(Book.class);
-        when(book.getName()).thenReturn(bookTitle);
+        when(book.getTitle()).thenReturn(bookTitle);
         when(book.getDescription()).thenReturn(bookDescription);
         when(book.isAvailable()).thenReturn(bookAvailable);
 
@@ -152,7 +152,7 @@ class BookDataModelTest {
         when(bookAvailable.getValue()).thenReturn(true);
 
         Book book = mock(Book.class);
-        when(book.getName()).thenReturn(bookTitle);
+        when(book.getTitle()).thenReturn(bookTitle);
         when(book.getDescription()).thenReturn(bookDescription);
         when(book.isAvailable()).thenReturn(bookAvailable);
 
@@ -179,7 +179,7 @@ class BookDataModelTest {
         when(bookAvailable.getValue()).thenReturn(true);
 
         Book book = mock(Book.class);
-        when(book.getName()).thenReturn(bookTitle);
+        when(book.getTitle()).thenReturn(bookTitle);
         when(book.getDescription()).thenReturn(bookDescription);
         when(book.isAvailable()).thenReturn(bookAvailable);
 
@@ -206,7 +206,7 @@ class BookDataModelTest {
         when(bookAvailable.getValue()).thenReturn(true);
 
         Book book = mock(Book.class);
-        when(book.getName()).thenReturn(bookTitle);
+        when(book.getTitle()).thenReturn(bookTitle);
         when(book.getDescription()).thenReturn(bookDescription);
         when(book.isAvailable()).thenReturn(bookAvailable);
 
@@ -235,10 +235,10 @@ class BookDataModelTest {
         when(bookID.getValue()).thenReturn(5);
 
         Book book = mock(Book.class);
-        when(book.getName()).thenReturn(bookTitle);
+        when(book.getTitle()).thenReturn(bookTitle);
         when(book.getDescription()).thenReturn(bookDescription);
         when(book.isAvailable()).thenReturn(bookAvailable);
-        when(book.getId()).thenReturn(bookID);
+        when(book.getID()).thenReturn(bookID);
 
         BookDataModel bookDataModel = new BookDataModel(book);
 
@@ -263,7 +263,7 @@ class BookDataModelTest {
 
 
         Book book = mock(Book.class);
-        when(book.getName()).thenReturn(bookTitle);
+        when(book.getTitle()).thenReturn(bookTitle);
         when(book.getDescription()).thenReturn(bookDescription);
         when(book.isAvailable()).thenReturn(bookAvailable);
 
@@ -290,10 +290,10 @@ class BookDataModelTest {
         when(bookID.getValue()).thenReturn(5);
 
         Book book = mock(Book.class);
-        when(book.getName()).thenReturn(bookTitle);
+        when(book.getTitle()).thenReturn(bookTitle);
         when(book.getDescription()).thenReturn(bookDescription);
         when(book.isAvailable()).thenReturn(bookAvailable);
-        when(book.getId()).thenReturn(bookID);
+        when(book.getID()).thenReturn(bookID);
 
         BookDataModel bookDataModel = new BookDataModel(book);
 

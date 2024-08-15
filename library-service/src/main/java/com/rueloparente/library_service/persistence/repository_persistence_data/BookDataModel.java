@@ -21,9 +21,9 @@ public class BookDataModel {
     public BookDataModel() {
     }
     public BookDataModel(Book book) {
-        if (book.getId() != null) this.bookID = book.getId().getValue();
+        if (book.getID() != null) this.bookID = book.getID().getValue();
 
-        this.title = book.getName().getValue();
+        this.title = book.getTitle().getValue();
         this.description = book.getDescription().getValue();
         this.isAvailable = book.isAvailable().getValue();
     }

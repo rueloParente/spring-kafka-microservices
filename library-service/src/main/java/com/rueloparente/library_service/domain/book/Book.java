@@ -11,33 +11,33 @@ import java.util.Objects;
 public class Book implements AggregateRoot {
 
     private BookID id;
-    private BookTitle name;
+    private BookTitle title;
     private BookDescription description;
     private BookAvailable available;
 
-    protected Book(BookTitle name, BookDescription description, BookAvailable available) {
-        this.name = name;
+    protected Book(BookTitle title, BookDescription description, BookAvailable available) {
+        this.title = title;
         this.description = description;
         this.available = available;
     }
-    protected Book(BookID id, BookTitle name, BookDescription description, BookAvailable available) {
+    protected Book(BookID id, BookTitle title, BookDescription description, BookAvailable available) {
         this.id = id;
-        this.name = name;
+        this.title = title;
         this.description = description;
         this.available = available;
     }
 
-    public BookID getId() {
+    public BookID getID() {
         return id;
     }
 
-    public BookID setId(BookID id) {
+    public BookID setID(BookID id) {
         this.id = id;
         return id;
     }
 
-    public BookTitle getName() {
-        return name;
+    public BookTitle getTitle() {
+        return title;
     }
 
     public BookDescription getDescription() {
@@ -52,8 +52,8 @@ public class Book implements AggregateRoot {
         this.available = available;
         return available;
     }
-    public BookTitle setName(BookTitle name) {
-        this.name = name;
+    public BookTitle setTitle(BookTitle name) {
+        this.title = name;
         return name;
     }
 
@@ -66,19 +66,19 @@ public class Book implements AggregateRoot {
     public boolean equals(Object o) {
         if (this == o) return true;
         if (!(o instanceof Book book)) return false;
-        return Objects.equals(id, book.id) && Objects.equals(name, book.name) && Objects.equals(description, book.description) && Objects.equals(available, book.available);
+        return Objects.equals(id, book.id) && Objects.equals(title, book.title) && Objects.equals(description, book.description) && Objects.equals(available, book.available);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(id, name, description, available);
+        return Objects.hash(id, title, description, available);
     }
 
     @Override
     public String toString() {
         return "Book{" +
                 "id=" + id.getValue() +
-                ", name=" + name.getValue() +
+                ", name=" + title.getValue() +
                 ", description=" + description.getValue() +
                 ", available=" + available.getValue() +
                 '}';

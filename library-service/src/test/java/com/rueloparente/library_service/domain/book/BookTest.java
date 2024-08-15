@@ -78,7 +78,7 @@ class BookTest {
         Book book = new Book(bookID, bookTitle, bookDescription, bookAvailable);
 
         //Act
-        BookTitle result = book.getName();
+        BookTitle result = book.getTitle();
 
         //Assert
         assertEquals(bookTitle, result);
@@ -129,7 +129,7 @@ class BookTest {
         Book book = new Book(bookID, bookTitle, bookDescription, bookAvailable);
 
         //Act
-        BookID result = book.getId();
+        BookID result = book.getID();
 
         //Assert
         assertEquals(bookID, result);
@@ -146,7 +146,7 @@ class BookTest {
         Book book = new Book(bookID, bookTitle, bookDescription, bookAvailable);
 
         //Act
-        BookID result = book.setId(bookID);
+        BookID result = book.setID(bookID);
 
         //Assert
         assertEquals(bookID, result);
@@ -291,7 +291,7 @@ class BookTest {
         Book book = new Book(bookID, bookTitle, bookDescription, bookAvailable);
 
         //Act
-        BookTitle result = book.setName(bookTitle2);
+        BookTitle result = book.setTitle(bookTitle2);
 
         //Assert
         assertEquals(bookTitle2, result);

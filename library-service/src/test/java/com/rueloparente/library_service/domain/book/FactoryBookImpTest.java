@@ -21,13 +21,13 @@ class FactoryBookImpTest {
 
         // Act
         try (MockedConstruction<Book> bookMockedConstruction = mockConstruction(Book.class, (mock, context) -> {
-            when(mock.getName()).thenReturn(bookTitle);
+            when(mock.getTitle()).thenReturn(bookTitle);
             when(mock.getDescription()).thenReturn(bookDescription);
             when(mock.isAvailable()).thenReturn(bookAvailable);
         })) {
             Book result = factoryBookImp.createBook(bookTitle, bookDescription, bookAvailable);
             // Assert
-            assertEquals(bookTitle, result.getName());
+            assertEquals(bookTitle, result.getTitle());
             assertEquals(bookDescription, result.getDescription());
             assertEquals(bookAvailable, result.isAvailable());
         }
@@ -45,15 +45,15 @@ class FactoryBookImpTest {
 
         // Act
         try (MockedConstruction<Book> bookMockedConstruction = mockConstruction(Book.class, (mock, context) -> {
-            when(mock.getId()).thenReturn(bookID);
-            when(mock.getName()).thenReturn(bookTitle);
+            when(mock.getID()).thenReturn(bookID);
+            when(mock.getTitle()).thenReturn(bookTitle);
             when(mock.getDescription()).thenReturn(bookDescription);
             when(mock.isAvailable()).thenReturn(bookAvailable);
         })) {
             Book result = factoryBookImp.createBook(bookID, bookTitle, bookDescription, bookAvailable);
             // Assert
-            assertEquals(bookID, result.getId());
-            assertEquals(bookTitle, result.getName());
+            assertEquals(bookID, result.getID());
+            assertEquals(bookTitle, result.getTitle());
             assertEquals(bookDescription, result.getDescription());
             assertEquals(bookAvailable, result.isAvailable());
         }
