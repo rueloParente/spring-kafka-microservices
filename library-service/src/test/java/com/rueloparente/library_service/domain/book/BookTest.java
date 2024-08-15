@@ -279,6 +279,40 @@ class BookTest {
         //Assert
         assertFalse(result);
     }
+    @Test
+    void shouldSetTitleWhenGivenValidValue() {
+        //Arrange
+        FactoryBookVO bookFactoryVO = new FactoryBookVOImp();
+        BookID bookID = bookFactoryVO.createBookID(1);
+        BookTitle bookTitle = bookFactoryVO.createBookTitle("Book1");
+        BookTitle bookTitle2 = bookFactoryVO.createBookTitle("Book2");
+        BookDescription bookDescription = bookFactoryVO.createBookDescription("Description1");
+        BookAvailable bookAvailable = bookFactoryVO.createBookAvailable(true);
+        Book book = new Book(bookID, bookTitle, bookDescription, bookAvailable);
+
+        //Act
+        BookTitle result = book.setName(bookTitle2);
+
+        //Assert
+        assertEquals(bookTitle2, result);
+    }
+    @Test
+    void shouldSetDescriptionWhenGivenValidValue() {
+        //Arrange
+        FactoryBookVO bookFactoryVO = new FactoryBookVOImp();
+        BookID bookID = bookFactoryVO.createBookID(1);
+        BookTitle bookTitle = bookFactoryVO.createBookTitle("Book1");
+        BookDescription bookDescription = bookFactoryVO.createBookDescription("Description1");
+        BookDescription bookDescription2 = bookFactoryVO.createBookDescription("Description2");
+        BookAvailable bookAvailable = bookFactoryVO.createBookAvailable(true);
+        Book book = new Book(bookID, bookTitle, bookDescription, bookAvailable);
+
+        //Act
+        BookDescription result = book.setDescription(bookDescription2);
+
+        //Assert
+        assertEquals(bookDescription2, result);
+    }
 
 
 }

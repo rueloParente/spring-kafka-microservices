@@ -11,8 +11,8 @@ import java.util.Objects;
 public class Book implements AggregateRoot {
 
     private BookID id;
-    private final BookTitle name;
-    private final BookDescription description;
+    private BookTitle name;
+    private BookDescription description;
     private BookAvailable available;
 
     protected Book(BookTitle name, BookDescription description, BookAvailable available) {
@@ -51,6 +51,15 @@ public class Book implements AggregateRoot {
     public BookAvailable setAvailable(BookAvailable available) {
         this.available = available;
         return available;
+    }
+    public BookTitle setName(BookTitle name) {
+        this.name = name;
+        return name;
+    }
+
+    public BookDescription setDescription(BookDescription description) {
+        this.description = description;
+        return description;
     }
 
     @Override
