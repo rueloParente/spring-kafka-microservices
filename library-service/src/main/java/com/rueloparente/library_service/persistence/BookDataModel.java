@@ -1,4 +1,4 @@
-package com.rueloparente.library_service.persistence.repository_persistence_data;
+package com.rueloparente.library_service.persistence;
 
 import com.rueloparente.library_service.domain.book.Book;
 import jakarta.persistence.*;

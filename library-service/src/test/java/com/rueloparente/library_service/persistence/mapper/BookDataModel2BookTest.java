@@ -3,7 +3,7 @@ package com.rueloparente.library_service.persistence.mapper;
 import com.rueloparente.library_service.domain.book.Book;
 import com.rueloparente.library_service.domain.book.FactoryBook;
 import com.rueloparente.library_service.domain.value_object.*;
-import com.rueloparente.library_service.persistence.repository_persistence_data.BookDataModel;
+import com.rueloparente.library_service.persistence.BookDataModel;
 import org.junit.jupiter.api.Test;
 
 import java.util.ArrayList;

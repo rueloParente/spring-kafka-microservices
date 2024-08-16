@@ -1,4 +1,4 @@
-package com.rueloparente.library_service.persistence.spring;
+package com.rueloparente.library_service.persistence;
 
 import com.rueloparente.library_service.ddd.RepositoryDIP;
 import com.rueloparente.library_service.domain.book.Book;

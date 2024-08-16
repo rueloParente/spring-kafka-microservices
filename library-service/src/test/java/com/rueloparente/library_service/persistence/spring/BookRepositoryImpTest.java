@@ -5,6 +5,7 @@ import com.rueloparente.library_service.domain.book.Book;
 import com.rueloparente.library_service.domain.book.FactoryBook;
 import com.rueloparente.library_service.domain.book.FactoryBookImp;
 import com.rueloparente.library_service.domain.value_object.*;
+import com.rueloparente.library_service.persistence.BookRepository;
 import com.rueloparente.library_service.persistence.mapper.BookDataModel2Book;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;

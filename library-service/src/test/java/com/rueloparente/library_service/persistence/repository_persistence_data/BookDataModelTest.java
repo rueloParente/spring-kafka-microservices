@@ -5,6 +5,7 @@ import com.rueloparente.library_service.domain.value_object.BookAvailable;
 import com.rueloparente.library_service.domain.value_object.BookDescription;
 import com.rueloparente.library_service.domain.value_object.BookID;
 import com.rueloparente.library_service.domain.value_object.BookTitle;
+import com.rueloparente.library_service.persistence.BookDataModel;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;

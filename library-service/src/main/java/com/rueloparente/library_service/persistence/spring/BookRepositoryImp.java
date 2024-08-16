@@ -2,8 +2,9 @@ package com.rueloparente.library_service.persistence.spring;
 
 import com.rueloparente.library_service.domain.book.Book;
 import com.rueloparente.library_service.domain.value_object.BookID;
+import com.rueloparente.library_service.persistence.BookRepository;
 import com.rueloparente.library_service.persistence.mapper.BookDataModel2Book;
-import com.rueloparente.library_service.persistence.repository_persistence_data.BookDataModel;
+import com.rueloparente.library_service.persistence.BookDataModel;
 import org.springframework.stereotype.Repository;
 
 import java.util.List;
