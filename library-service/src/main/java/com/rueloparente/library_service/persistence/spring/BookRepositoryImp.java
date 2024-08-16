@@ -2,10 +2,11 @@ package com.rueloparente.library_service.persistence.spring;
 
 import com.rueloparente.library_service.domain.book.Book;
 import com.rueloparente.library_service.domain.value_object.BookID;
-import com.rueloparente.library_service.persistence.repository_persistence_data.BookDataModel;
 import com.rueloparente.library_service.persistence.mapper.BookDataModel2Book;
+import com.rueloparente.library_service.persistence.repository_persistence_data.BookDataModel;
 import org.springframework.stereotype.Repository;
 
+import java.util.List;
 import java.util.Optional;
 
 @Repository
@@ -31,7 +32,7 @@ public class BookRepositoryImp implements BookRepository {
     }
 
     @Override
-    public Iterable<Book> findAll() {
+    public List<Book> findAll() {
         Iterable<BookDataModel> result = dbContext.findAll();
         return mapper.toDomain(result);
     }

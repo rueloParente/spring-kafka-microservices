@@ -1,4 +1,4 @@
-package com.rueloparente.library_service.service;
+package com.rueloparente.library_service.service.mapper;
 
 import com.rueloparente.library_service.domain.value_object.BookAvailable;
 import com.rueloparente.library_service.domain.value_object.BookDescription;

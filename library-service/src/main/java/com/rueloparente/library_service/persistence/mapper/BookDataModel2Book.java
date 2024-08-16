@@ -7,6 +7,8 @@ import com.rueloparente.library_service.persistence.repository_persistence_data.
 import org.springframework.stereotype.Component;
 
 import java.util.ArrayList;
+import java.util.List;
+
 @Component
 public class BookDataModel2Book {
     private final FactoryBook factoryBook;
@@ -24,11 +26,11 @@ public class BookDataModel2Book {
         BookAvailable bookAvailable = factoryBookVO.createBookAvailable(bookDataModel.isAvailable());
         return factoryBook.createBook(bookID, bookTitle, bookDescription, bookAvailable);
     }
-    public Iterable<Book> toDomain(Iterable<BookDataModel> bookDataModels) {
-        Iterable<Book> books = new ArrayList<>();
+    public List<Book> toDomain(Iterable<BookDataModel> bookDataModels) {
+        List<Book> books = new ArrayList<>();
         for (BookDataModel bookDataModel : bookDataModels) {
             Book book = toDomain(bookDataModel);
-            ((ArrayList<Book>) books).add(book);
+            books.add(book);
         }
         return books;
     }
