@@ -8,13 +8,15 @@ import com.rueloparente.library_service.domain.value_object.BookID;
 import com.rueloparente.library_service.domain.value_object.BookTitle;
 import com.rueloparente.library_service.dto.service_response.BookResponseModel;
 import com.rueloparente.library_service.persistence.BookRepository;
-import com.rueloparente.library_service.service.mapper.Book2ServiceResponseModel;
+import com.rueloparente.library_service.mapper.service_response.Book2ServiceResponseModel;
+import org.springframework.stereotype.Service;
 import org.webjars.NotFoundException;
 
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 
+@Service
 public class BookServiceImpl implements BookService{
     private final BookRepository bookRepository;
     private final FactoryBook factoryBook;

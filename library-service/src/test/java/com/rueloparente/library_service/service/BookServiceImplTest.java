@@ -8,7 +8,7 @@ import com.rueloparente.library_service.domain.value_object.BookID;
 import com.rueloparente.library_service.domain.value_object.BookTitle;
 import com.rueloparente.library_service.dto.service_response.BookResponseModel;
 import com.rueloparente.library_service.persistence.BookRepository;
-import com.rueloparente.library_service.service.mapper.Book2ServiceResponseModel;
+import com.rueloparente.library_service.mapper.service_response.Book2ServiceResponseModel;
 import org.junit.jupiter.api.Test;
 
 import java.util.List;
