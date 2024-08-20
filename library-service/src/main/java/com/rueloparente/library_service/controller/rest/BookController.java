@@ -56,6 +56,7 @@ public class BookController {
         return ResponseEntity.ok(getBookResponses);
     }
 
+    // Update book
     @PutMapping
     public ResponseEntity<UpdateBookResponse> updateBook(@RequestBody UpdateBookRequest updateBookRequest) {
         BookID bookID = factoryBookVO.createBookID(updateBookRequest.bookID);
@@ -68,6 +69,18 @@ public class BookController {
                 bookResponseModel.bookDescription, bookResponseModel.bookAvailable);
 
         return ResponseEntity.ok(updateBookResponse);
+    }
+
+    // Delete book
+    @DeleteMapping("/{bookID}")
+    public ResponseEntity<String> deleteBook(@PathVariable int bookID) {
+        BookID bookIDVO = factoryBookVO.createBookID(bookID);
+        boolean result = bookService.deleteBook(bookIDVO);
+        if (result) {
+            return ResponseEntity.ok("Book deleted successfully");
+        } else {
+            return ResponseEntity.badRequest().body("Book not found");
+        }
     }
 
 }

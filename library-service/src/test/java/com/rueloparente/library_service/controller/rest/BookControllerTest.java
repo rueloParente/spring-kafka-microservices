@@ -174,4 +174,28 @@ class BookControllerTest {
                 .andExpect(content().json(objectMapper.writeValueAsString(expectedResponse)));
     }
 
+    @Test
+    void shouldDeleteBookAndReturnSuccessMessage() throws Exception {
+        //Arrange
+        AddBookRequest addBookRequest = new AddBookRequest("Book Title", "Book Description", true);
+        mockMvc.perform(
+                post("/api/v1/library")
+                        .contentType(MediaType.APPLICATION_JSON)
+                        .content(objectMapper.writeValueAsString(addBookRequest)));
+
+        //Act
+        mockMvc.perform(
+                delete("/api/v1/library/1"))
+                .andExpect(status().isOk())
+                .andExpect(content().string("Book deleted successfully"));
+    }
+    @Test
+    void shouldReturnErrorIfBookToDeleteDoesNotExist() throws Exception {
+        //Act
+        mockMvc.perform(
+                delete("/api/v1/library/1"))
+                .andExpect(status().isBadRequest())
+                .andExpect(result -> result.getResponse().getContentAsString().equals("Book not found!"));
+    }
+
 }
