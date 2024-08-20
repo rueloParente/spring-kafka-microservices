@@ -28,7 +28,7 @@ class Book2ServiceResponseModelTest {
         BookAvailable bookAvailable = mock(BookAvailable.class);
         when(bookAvailable.getValue()).thenReturn(true);
 
-        String expected = "BookResponseModel{bookID=1, bookName='title', bookDescription='description', bookAvailable=true}";
+        String expected = "BookResponseModel{bookID=1, bookTitle='title', bookDescription='description', bookAvailable=true}";
         // Act
         BookResponseModel bookResponseModel = book2ServiceResponseModel.toServiceResponseModel(bookID, bookTitle, bookDescription, bookAvailable);
 

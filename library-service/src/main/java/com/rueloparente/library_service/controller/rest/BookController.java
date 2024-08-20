@@ -38,7 +38,7 @@ public class BookController {
         BookAvailable available = factoryBookVO.createBookAvailable(addBookRequest.available);
 
         BookResponseModel bookResponseModel = bookService.addNewBook(title, description, available);
-        AddBookResponse addBookResponse = serviceResponseModel2ControllerResponse.toControllerAddBookResponse(bookResponseModel.bookName,
+        AddBookResponse addBookResponse = serviceResponseModel2ControllerResponse.toControllerAddBookResponse(bookResponseModel.title,
                 bookResponseModel.bookDescription, bookResponseModel.bookAvailable);
         return ResponseEntity.status(HttpStatus.CREATED).body(addBookResponse);
     }
@@ -51,7 +51,7 @@ public class BookController {
 
         for (BookResponseModel bookResponseModel : bookResponseModels) {
             getBookResponses.add(serviceResponseModel2ControllerResponse.toControllerGetBookResponse(bookResponseModel.bookID,
-                    bookResponseModel.bookName, bookResponseModel.bookDescription, bookResponseModel.bookAvailable));
+                    bookResponseModel.title, bookResponseModel.bookDescription, bookResponseModel.bookAvailable));
         }
         return ResponseEntity.ok(getBookResponses);
     }
@@ -60,12 +60,12 @@ public class BookController {
     @PutMapping
     public ResponseEntity<UpdateBookResponse> updateBook(@RequestBody UpdateBookRequest updateBookRequest) {
         BookID bookID = factoryBookVO.createBookID(updateBookRequest.bookID);
-        BookTitle title = factoryBookVO.createBookTitle(updateBookRequest.bookName);
+        BookTitle title = factoryBookVO.createBookTitle(updateBookRequest.title);
         BookDescription description = factoryBookVO.createBookDescription(updateBookRequest.bookDescription);
         BookAvailable available = factoryBookVO.createBookAvailable(updateBookRequest.bookAvailable);
 
         BookResponseModel bookResponseModel = bookService.updateBook(bookID, title, description, available);
-        UpdateBookResponse updateBookResponse = serviceResponseModel2ControllerResponse.toControllerUpdateBookResponse(bookResponseModel.bookName,
+        UpdateBookResponse updateBookResponse = serviceResponseModel2ControllerResponse.toControllerUpdateBookResponse(bookResponseModel.title,
                 bookResponseModel.bookDescription, bookResponseModel.bookAvailable);
 
         return ResponseEntity.ok(updateBookResponse);
