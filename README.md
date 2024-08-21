@@ -17,7 +17,22 @@ Depois o outro serviço vai consumir estas mensagens e dar update do estado da r
 ```
 
 
-### 1. Create a maven root project 
+### 1. Core concepts / technologies of the project 
+1. Domain Driven Design
+2. Clean Architecture
+3. Repository Pattern
+4. MS SQL Server Database
+5. H2 Database
+6. Spring Boot
+7. Spring Data JPA
+8. Spring Kafka
+9. Docker
+10. TDD
+11. Swagger
+
+
+
+
 
 
 
