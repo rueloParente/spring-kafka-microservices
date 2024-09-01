@@ -9,7 +9,7 @@ class ReservationDataModelTest {
     @Test
     void shouldCreateReservationDataModelWithNoArgs() {
         // Arrange
-        String expectedDataModel = "ReservationDataModel(id=null, bookID=null, reservationDate=null, returnDate=null, clientID=null)";
+        String expectedDataModel = "ReservationDataModel(id=0, bookID=null, reservationDate=null, returnDate=null, clientID=null)";
         // Act
         ReservationDataModel reservationDataModel = new ReservationDataModel();
         String actualDataModel = reservationDataModel.toString();
