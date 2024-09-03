@@ -18,5 +18,6 @@
 
     <modules>
         <module>library-service</module>
+        <module>reservation-service</module>
     </modules>
 </project>
