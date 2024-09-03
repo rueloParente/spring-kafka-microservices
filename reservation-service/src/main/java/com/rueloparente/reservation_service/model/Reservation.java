@@ -11,7 +11,6 @@ import java.time.LocalDateTime;
 @EqualsAndHashCode
 @ToString
 public class Reservation implements AggregateRoot {
-    @NonNull
     private Integer id;
     @NonNull
     private String bookID;

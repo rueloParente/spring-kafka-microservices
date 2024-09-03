@@ -49,24 +49,6 @@ class ReservationTest {
         assertEquals(expected, reservation.toString());
     }
 
-    @Test
-    void builderShouldThrowExceptionWhenIdIsNull() {
-        //Arrange
-        Integer id = null;
-        String bookID = "bookID";
-        String reservationDate = "2021-08-01T00:00:00";
-        String returnDate = "2021-08-02T00:00:00";
-        String clientID = "clientID";
-
-        //Act & Assert
-        assertThrows(NullPointerException.class, () -> Reservation.builder()
-                .id(id)
-                .bookID(bookID)
-                .reservationDate(java.time.LocalDateTime.parse(reservationDate))
-                .returnDate(java.time.LocalDateTime.parse(returnDate))
-                .clientID(clientID)
-                .build());
-    }
 
     @Test
     void builderShouldThrowExceptionWhenBookIDIsNull() {

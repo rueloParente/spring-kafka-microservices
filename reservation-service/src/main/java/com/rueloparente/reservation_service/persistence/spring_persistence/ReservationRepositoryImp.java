@@ -7,7 +7,6 @@ import com.rueloparente.reservation_service.persistence.mapper.ReservationDataMo
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Repository;
 
-import java.time.LocalDateTime;
 import java.util.List;
 import java.util.Optional;
 
@@ -35,7 +34,6 @@ public class ReservationRepositoryImp implements ReservationRepository {
     public Reservation save(Reservation reservation) {
         String returnDate = reservation.getReturnDate() == null ? null : reservation.getReturnDate().toString();
         ReservationDataModel reservationDataModel = ReservationDataModel.builder()
-                .id(reservation.getId())
                 .bookID(reservation.getBookID())
                 .clientID(reservation.getClientID())
                 .reservationDate(reservation.getReservationDate().toString())
